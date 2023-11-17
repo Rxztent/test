@@ -5,18 +5,25 @@ window.testMod = {};
 ////////////////////////////////////////////////////////////////////
 
 window.testMod.runCodeBefore = function() {
-  this.pixelList = [];
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'e' || e.key === 'E') {
-      // Spawn an apple
-      window.snakeGame.pixelList.push({
-        x: Math.floor(window.snakeGame.currentBoardWidth * 3 / 4),
-        y: Math.floor(window.snakeGame.currentBoardHeight / 2),
-        category: 'apple',
-        type: 0
-      });
-    }
-  });
+  // Check if snakeGame is defined
+  if (window.snakeGame) {
+    // Initialize pixelList if not already defined
+    window.snakeGame.pixelList = window.snakeGame.pixelList || [];
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'e' || e.key === 'E') {
+        // Spawn an apple
+        window.snakeGame.pixelList.push({
+          x: Math.floor(window.snakeGame.currentBoardWidth * 3 / 4),
+          y: Math.floor(window.snakeGame.currentBoardHeight / 2),
+          category: 'apple',
+          type: 0
+        });
+      }
+    });
+  } else {
+    console.error('snakeGame is undefined. Make sure the game is properly loaded.');
+  }
 }
 
 ////////////////////////////////////////////////////////////////////
