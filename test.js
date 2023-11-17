@@ -5,7 +5,6 @@ window.testMod = {};
 ////////////////////////////////////////////////////////////////////
 
 window.testMod.runCodeBefore = function() {
-  // Check if snakeGame is defined
   if (window.snakeGame) {
     this.currentBoardWidth = 17;
     this.currentBoardHeight = 15;
@@ -13,16 +12,8 @@ window.testMod.runCodeBefore = function() {
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'e' || e.key === 'E') {
-        // Spawn an apple at a random position on the board
-        const randomX = Math.floor(Math.random() * window.testMod.currentBoardWidth);
-        const randomY = Math.floor(Math.random() * window.testMod.currentBoardHeight);
-
-        window.snakeGame.pixelList.push({
-          x: randomX,
-          y: randomY,
-          category: 'apple',
-          type: 0
-        });
+        // Use level editor's function to place an apple randomly
+        placeRandomApple();
       }
     });
   } else {
@@ -45,4 +36,29 @@ window.testMod.alterSnakeCode = function(code) {
 
 window.testMod.runCodeAfter = function() {
   // Add any code that should run after the game code
+}
+
+// Function to place an apple randomly using the level editor code
+function placeRandomApple() {
+  // Access the level editor's pixelList array
+  const levelEditorPixelList = customPresetManager.pixelList;
+
+  // Get the board dimensions
+  const boardWidth = customPresetManager.currentBoardWidth;
+  const boardHeight = customPresetManager.currentBoardHeight;
+
+  // Generate random coordinates within the board dimensions
+  const randomX = Math.floor(Math.random() * boardWidth);
+  const randomY = Math.floor(Math.random() * boardHeight);
+
+  // Add an apple to the level editor's pixelList
+  levelEditorPixelList.push({
+    x: randomX,
+    y: randomY,
+    category: 'apple',
+    type: 0
+  });
+
+  // Redraw the level editor canvas
+  customPresetManager.draw();
 }
