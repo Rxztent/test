@@ -7,8 +7,8 @@ window.testMod = {};
 window.testMod.runCodeBefore = function() {
   // Check if snakeGame is defined
   if (window.snakeGame) {
-   this.currentBoardWidth = 10;
-   this.currentBoardHeight = 9;
+   this.currentBoardWidth = 17;
+   this.currentBoardHeight = 15;
     this.pixelList = [];
     // window.testMod.pixelList = window.snakeGame.pixelList || [];
     document.addEventListener('keydown', function(e) {
