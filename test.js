@@ -7,16 +7,19 @@ window.testMod = {};
 window.testMod.runCodeBefore = function() {
   // Check if snakeGame is defined
   if (window.snakeGame) {
-   this.currentBoardWidth = 17;
-   this.currentBoardHeight = 15;
+    this.currentBoardWidth = 17;
+    this.currentBoardHeight = 15;
     this.pixelList = [];
-    // window.testMod.pixelList = window.snakeGame.pixelList || [];
+
     document.addEventListener('keydown', function(e) {
       if (e.key === 'e' || e.key === 'E') {
-        // Spawn an apple
+        // Spawn an apple at a random position on the board
+        const randomX = Math.floor(Math.random() * window.testMod.currentBoardWidth);
+        const randomY = Math.floor(Math.random() * window.testMod.currentBoardHeight);
+
         window.snakeGame.pixelList.push({
-          x: Math.floor(window.testMod.currentBoardWidth * 3 / 4),
-          y: Math.floor(window.testMod.currentBoardHeight / 2),
+          x: randomX,
+          y: randomY,
           category: 'apple',
           type: 0
         });
