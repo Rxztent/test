@@ -1,11 +1,11 @@
 {
   "version": "1.0.11",
   "startMessage": {
-    "showToEveryone":true,
+    "showToEveryone":false,
     "showIfUpdateNeeded":false,
     "excludeFbx":false,
     "excludeSearch":false,
-    "showUpdatePrompt":true,
+    "showUpdatePrompt":false,
     "explanatoryText":"Test info",
     "showMoreInfoLink":false,
     "moreInfoLink":"about_update.md"
