@@ -5,7 +5,7 @@ window.testMod = {};
 ////////////////////////////////////////////////////////////////////
 
 window.testMod.runCodeBefore = function() {
-  // Add an event listener for the 'E' key press
+  this.pixelList = [];
   document.addEventListener('keydown', function(e) {
     if (e.key === 'e' || e.key === 'E') {
       // Spawn an apple
