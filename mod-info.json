@@ -1,12 +1,12 @@
 {
   "version": "1.0.11",
   "startMessage": {
-    "showToEveryone":false,
+    "showToEveryone":true,
     "showIfUpdateNeeded":false,
     "excludeFbx":false,
     "excludeSearch":false,
     "showUpdatePrompt":true,
-    "explanatoryText":"Message from devs...",
+    "explanatoryText":"Test info",
     "showMoreInfoLink":false,
     "moreInfoLink":"about_update.md"
   },
@@ -34,11 +34,11 @@
         "descriptionName": "Level Editor Mod",
         "authors": [
           {
-            "name": "TF2Llama",
+            "name": "rxztent",
             "url": "https://www.youtube.com/@TF2Llama"
           }
         ],
-        "description": "Click on the board to place walls/fruit etc. Play pre-made levels. Make your own levels. Try the challenge levels."
+        "description": "Test"
       }
     },
     "mouseMode": {
