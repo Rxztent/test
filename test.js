@@ -7,15 +7,16 @@ window.testMod = {};
 window.testMod.runCodeBefore = function() {
   // Check if snakeGame is defined
   if (window.snakeGame) {
-    // Initialize pixelList if not already defined
-    window.snakeGame.pixelList = window.snakeGame.pixelList || [];
-
+   this.currentBoardWidth = 10;
+   this.currentBoardHeight = 9;
+    this.pixelList = [];
+    // window.testMod.pixelList = window.snakeGame.pixelList || [];
     document.addEventListener('keydown', function(e) {
       if (e.key === 'e' || e.key === 'E') {
         // Spawn an apple
         window.snakeGame.pixelList.push({
-          x: Math.floor(window.snakeGame.currentBoardWidth * 3 / 4),
-          y: Math.floor(window.snakeGame.currentBoardHeight / 2),
+          x: Math.floor(window.testMod.currentBoardWidth * 3 / 4),
+          y: Math.floor(window.testMod.currentBoardHeight / 2),
           category: 'apple',
           type: 0
         });
